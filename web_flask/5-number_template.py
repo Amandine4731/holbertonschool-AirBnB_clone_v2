@@ -32,7 +32,7 @@ def python_text(text):
     return var.replace("_", " ")
 
 
-@app.route('/number/<int:n>'; strict_slashes=False)
+@app.route('/number/<int:n>', strict_slashes=False)
 def n_num(n):
     var = f'{n} is a number'
     return var
