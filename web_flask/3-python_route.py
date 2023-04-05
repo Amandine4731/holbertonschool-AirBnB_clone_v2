@@ -28,8 +28,9 @@ def c_text(text):
     return var.replace("_", " ")
 
 
-@app.route('/python/<text>')
-def python_text(text = "is cool"):
+@app.route("/python/", defaults={ 'text': 'is cool' })
+@app.route("/python/<text>")
+def python_text(text):
     strict_slashes = False
     var = f'Python {text}'
     return var.replace("_", " ")
