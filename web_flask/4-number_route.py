@@ -36,12 +36,11 @@ def python_text(text):
     return var.replace("_", " ")
 
 
-@app.route('/number/<n>')
+@app.route('/number/<int:n>')
 def n_num(n):
     strict_slashes = False
-    if type(n) is int:
-        var = f'{n} is a number'
-        return var
+    var = f'{n} is a number'
+    return var
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
